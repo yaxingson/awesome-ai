@@ -3,27 +3,9 @@
 
 ## LLMs
 
-### OpenAI
-
-| Model | Description | Released | Context Lenght | Input Modalities | Max Tokens | Max Output Tokens | Open Source |
-| ----- | -----  | -----  | ----- | ----- | ----- | ------ | ----- |
-
-
-
-### Anthropic
-
-
-### Google
-
-
-
-### Grok
-
-### Llama
-
-### Qwen
-
-### DeepSeek
+| Model | Released | Context Lenght | Input Modalities | Max Tokens | Max Output Tokens | Open Source |
+| -----  | -----  | ----- | ----- | ----- | ------ | ----- |
+| `openai/gpt-5.2-pro` | Dec 10, 2025 | 400k | image, text, file | 400K | 128K | ❌ |
 
 
 
