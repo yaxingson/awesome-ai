@@ -11,7 +11,7 @@ A cloud-based software engineering agent that autonomously writes, debugs, and t
 ### [OpenCode]()
 An open-source AI coding agent that runs in your terminal, allowing developers to write, debug, and refactor code using natural language while maintaining privacy and supporting 75+ LLM providers.
 
-## Agent
+## Online
 
 ### [Replit](https://replit.com/)
 A cloud-based integrated development environment (IDE) that lets you write, run, and deploy code directly from your browser, with built-in AI assistance and real-time collaboration features.
