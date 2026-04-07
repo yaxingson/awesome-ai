@@ -88,6 +88,13 @@
 - [Microsoft Copilot]()
 
 
+## 一站式应用
+
+- [Cherry Studio]()
+- [Open WebUI]()
+- [ChatBox](https://chatboxai.app/en/#)
+
+
 
 
 
