@@ -8,19 +8,19 @@
 
 ## 聊天
 
-- [`ChatGPT`]()
+- [ChatGPT]()
 
 ## AI编码
 
-- [`Claude Code`]()
-- [`Codex CLI`]()
-- [`Gemini CLI`]()
+- [Claude Code]()
+- [Codex CLI]()
+- [Gemini CLI]()
 
 
 ## 自动化工作流
 
-- [`Dify`]()
-- [`N8N`]()
+- [Dify]()
+- [N8N]()
 
 
 
