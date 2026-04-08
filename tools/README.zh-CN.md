@@ -32,38 +32,33 @@ curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions 
 
 #### DeepSeek
 
+API示例：
+
+1. 补全对话
+
 ```http
-POST https://httpbin.org/post
+@BASE_URL = https://api.deepseek.com 
+@API_KEY = sk-1917a47ce3534ffb850695d76b41ce89
+
+POST {{BASE_URL}}/chat/completions HTTP/1.1
 Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{API_KEY}}
 
-{"name": "张三", "email": "zhang@example.com"}
-```
-
-
-
-
-
-示例：
-
-```sh
-curl -L -X POST 'https://api.deepseek.com/chat/completions' \
--H 'Content-Type: application/json' \
--H 'Accept: application/json' \
--H 'Authorization: Bearer ${DEEPSEEK_API_KEY}' \
---data-raw '{
+{
+  "model": "deepseek-chat",
   "messages": [
     {
-      "content": "You are a helpful assistant",
-      "role": "system"
+      "role": "system",
+      "content": "You are a helpful assistant."
     },
     {
-      "content": "Hi",
-      "role": "user"
+      "role": "user",
+      "content": "你是谁？"
     }
   ],
-  "model": "deepseek-chat",
-  "thinking": {
-    "type": "disabled"
+  "thinking":{
+    "type":"disabled"
   },
   "frequency_penalty": 0,
   "max_tokens": 4096,
@@ -80,7 +75,60 @@ curl -L -X POST 'https://api.deepseek.com/chat/completions' \
   "tool_choice": "none",
   "logprobs": false,
   "top_logprobs": null
-}'
+}
+
+```
+
+2. `FIM(Fill-In-the-Middle)`补全
+
+```http
+@BASE_URL = https://api.deepseek.com/beta
+@API_KEY = sk-1917a47ce3534ffb850695d76b41ce89
+
+POST {{BASE_URL}}/completions HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{API_KEY}}
+
+{
+  "model": "deepseek-chat",
+  "prompt": "很久很久以前, ",
+  "echo": false,
+  "frequency_penalty": 0,
+  "logprobs": 0,
+  "max_tokens": 1024,
+  "presence_penalty": 0,
+  "stop": null,
+  "stream": false,
+  "stream_options": null,
+  "suffix": null,
+  "temperature": 1,
+  "top_p": 1
+}
+
+```
+
+3. 列出模型
+
+```http
+@BASE_URL = https://api.deepseek.com
+@API_KEY = sk-1917a47ce3534ffb850695d76b41ce89
+
+GET {{BASE_URL}}/models HTTP/1.1
+Accept: application/json
+Authorization: Bearer {{API_KEY}}
+
+```
+
+4. 查询余额
+
+```http
+@BASE_URL = https://api.deepseek.com
+@API_KEY = sk-1917a47ce3534ffb850695d76b41ce89
+
+GET {{BASE_URL}}/user/balance HTTP/1.1
+Accept: application/json
+Authorization: Bearer {{API_KEY}}
 
 ```
 
@@ -90,14 +138,18 @@ curl -L -X POST 'https://api.deepseek.com/chat/completions' \
 
 示例：
 
-```sh
-curl --request POST \
-  --url https://api.minimaxi.com/v1/text/chatcompletion_v2 \
-  --header 'Authorization: Bearer <token>' \
-  --header 'Content-Type: application/json' \
-  --data '
+1. 文本对话
+
+```http
+@BASE_URL = https://api.minimaxi.com
+@API_KEY = sk-api-HQZAwfNLX6I-A3UAwQn7idZ39pVGRU07pwcRAhZVDhiqRcfjY5VIszbLqP-fk-TZPCxyZL7kOwkcZWtQnWWrybQP6xao3BfAs308VYxRD1lTcS_jEMlQvIo
+
+POST {{BASE_URL}}/v1/text/chatcompletion_v2 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{API_KEY}}
+
 {
-  "model": "MiniMax-M2.7",
+  "model": "M2-her",
   "messages": [
     {
       "role": "system",
@@ -110,7 +162,6 @@ curl --request POST \
     }
   ]
 }
-'
 
 ```
 
